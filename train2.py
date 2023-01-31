@@ -33,7 +33,7 @@ def train(gen_net: nn.Module, disc_net: nn.Module, gen_opt: optim.Optimizer, dis
   
         print(f"epoch={epoch}, trainloss={trainloss}, valloss={valloss}, disc_loss={disc_loss}")
         fname=f'{modelname}_{epoch}.pt'
-        kt.save_ckp(model=gen_net, opt=gen_opt, epoch=epoch, minerror=1, fname=fname)
+        kt.save_ckp(model=gen_net, opt=gen_opt, epoch=epoch, trainloss=trainloss, valloss=valloss, fname=fname)
 
 
 
