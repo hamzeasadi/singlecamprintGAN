@@ -55,7 +55,7 @@ def main():
     gen_opt = optim.RMSprop(params=GenNet.parameters(), lr=3e-4)
     disc_opt = optim.RMSprop(params=discNet.parameters(), lr=3e-4)
     if args.train:
-        train(gen_net=GenNet, disc_net=discNet, gen_opt=gen_opt, disc_opt=disc_opt, criterion=crt, modelname=mn, epochs=args.epoch)
+        train(gen_net=GenNet, disc_net=discNet, gen_opt=gen_opt, disc_opt=disc_opt, criterion=crt, modelname=mn, epochs=args.epochs)
     
 
 
