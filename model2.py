@@ -32,7 +32,7 @@ class VideoPrint(nn.Module):
         out1 = self.noisext(x1)
         out2 = self.noisext(x2)
         res1, res2 = x1[:, 0:1, :, :]-out1, x2[:, 0:1, :, :]-out2
-        return (res1, res2)
+        return (out1, out2), (res1, res2)
 
 
 class Critic(nn.Module):
