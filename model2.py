@@ -31,8 +31,8 @@ class VideoPrint(nn.Module):
     def forward(self, x1, x2):
         out1 = self.noisext(x1)
         out2 = self.noisext(x2)
-        res1, res2 = x1[:, 0:1, :, :]-out1, x2[:, 0:1, :, :]-out2
-        return (out1, out2), (res1, res2)
+        # res1, res2 = x1[:, 0:1, :, :]-out1, x2[:, 0:1, :, :]-out2
+        return out1, out2
 
 
 class Critic(nn.Module):
