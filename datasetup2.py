@@ -42,14 +42,14 @@ def coordinate(High, Width):
 coordxy = coordinate(High=1080, Width=1920)
 
 def cropimg(img, hi, wi, H=64, W=64):
-    coordcrop = coordxy[:, hi:hi+H, wi:wi+W]
+    # coordcrop = coordxy[:, hi:hi+H, wi:wi+W]
     cropp = img[hi:hi+H, wi:wi+W, 1:2]
     croppn = (cropp - np.min(cropp))/(np.max(cropp) - np.min(cropp) + 0.000001)
     imgc = torch.from_numpy(croppn).permute(2, 0, 1)
 
 
-    return torch.cat((imgc, coordcrop), dim=0)
-
+    # return torch.cat((imgc, coordcrop), dim=0)
+    return imgc
 
 class NoisPrintData(Dataset):
     """
@@ -64,7 +64,7 @@ class NoisPrintData(Dataset):
         print(len(self.patchids))
 
     def getpair(self, patchid):
-        coords = coordinate(High=1080, Width=1920)
+        # coords = coordinate(High=1080, Width=1920)
         folderpath, h, w = self.temp[patchid]
         iframelist = os.listdir(folderpath)
         subiframes = random.sample(iframelist, 4)

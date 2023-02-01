@@ -47,7 +47,7 @@ def train(gen_net: nn.Module, disc_net: nn.Module, gen_opt: optim.Optimizer, dis
 def main():
     
     mn = args.modelname
-    GenNet = m.VideoPrint(inch=3, depth=20)
+    GenNet = m.VideoPrint(inch=1, depth=20)
     GenNet.to(dev)
     discNet = m.Critic(channels_img=1, features_d=64)
     discNet.to(dev)
