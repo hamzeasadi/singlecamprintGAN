@@ -91,8 +91,8 @@ class OneClassLoss(nn.Module):
 
         # print(logits.shape, labels.shape)
         l1 = self.crit(logits, labels)
-        l2 = -self.reg*calc_psd(x.squeeze())
-        return l1 + l2
+        # l2 = -self.reg*calc_psd(x.squeeze())
+        return l1 #+ l2
         
        
 class KeepTrack():
