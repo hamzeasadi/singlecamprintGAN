@@ -10,6 +10,9 @@ import model2 as m2
 import cv2
 
 
+
+
+
 dev = torch.device('cpu')
 testdata = cfg.paths['val']
 
